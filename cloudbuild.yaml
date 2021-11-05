@@ -6,3 +6,7 @@ steps:
  # build production ready frontend angular app
  - name: "gcr.io/cloud-builders/npm:node-14.10.0"
    args: [run,build,"--","--configuration=production"]
+ 
+ # copy files from dist folder to cloud storage
+ - name: gcr.io/cloud-builders/gsutil
+   args: ["-m", "rsync", "-r", "-c", "-d", "./dist/", "gs://sampleeee"]
