@@ -5,4 +5,4 @@ steps:
 
  # build production ready frontend angular app
  - name: "gcr.io/cloud-builders/npm:node-14.10.0"
-  args: ["run","build","--","--prod"]
+  args: ["run","build","--","'--configuration=production'"]
