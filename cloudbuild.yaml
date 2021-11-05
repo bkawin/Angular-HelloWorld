@@ -1,8 +1,10 @@
 steps:
  # install dependencies for angular app
- - name: "gcr.io/cloud-builders/npm:node-14.10.0"
-  args: ["install"]
+ - |
+    name: "gcr.io/cloud-builders/npm:node-14.10.0"
+    args: ["install"]
 
  # build production ready frontend angular app
- - name: "gcr.io/cloud-builders/npm:node-14.10.0"
-  args: ["run","build","--","'--configuration=production'"]
+ - |
+    name: "gcr.io/cloud-builders/npm:node-14.10.0"
+    args: ["run","build","--","'--configuration=production'"]
