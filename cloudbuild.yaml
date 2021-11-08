@@ -7,6 +7,6 @@ steps:
  - name: "gcr.io/cloud-builders/npm:node-14.10.0"
    args: [run,build,"--","--configuration=production"]
  
- # copy files from dist folder to cloud storage
+ # copy files from dist folder to cloud storage bucket
  - name: gcr.io/cloud-builders/gsutil
    args: ["-m", "rsync", "-r", "-c", "-d", "./dist/", "gs://sampleeee"]
